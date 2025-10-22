@@ -10,10 +10,10 @@
 
 ## 📑 Table of Contents
 1. [About This Repo](#about-this-repo)
-2. [Projects / Write-ups](#projects--write-ups)
-4. [Tools & Skills](#tools--skills)
-5. [How to Run Lab Artifacts Locally](#how-to-run-lab-artifacts-locally)
-6. [Report & Artifact Structure](#report--artifact-structure)
+2. [Skills](#skills)
+4. [Tools](#tools)
+5. [Certifications & Training](#certifications--Training)
+6. [Projects](#projects)
 7. [Responsible Disclosure & Ethics](#responsible-disclosure--ethics)
 8. [Contributing / Forks](#contributing--forks)
 9. [License & Contact](#license--contact)
@@ -34,7 +34,6 @@ It includes:
 ---
 
 ## Skills
-[Provide skills and associated project. Make sure to hyperlink the project - Remove this afterwards]]
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
@@ -46,10 +45,11 @@ It includes:
 | Scripting and Automation for Threat Mitigation | SOC Automation Lab|
 
 ---
-## Tools
-[Provide tools and break them down into categories. Use ChatGPT to help create the link - Remove this afterwards]]
 
-### Network
+## Tools
+
+
+### Network Discovery
 <div>
     <img src="https://img.shields.io/badge/-Wireshark-1679A7?&style=for-the-badge&logo=Wireshark&logoColor=white" />
     <img src="https://img.shields.io/badge/-Suricata-EF3B2D?&style=for-the-badge&logo=Suricata&logoColor=white" />
@@ -69,8 +69,10 @@ It includes:
     <img src="https://img.shields.io/badge/-Elastic-005571?&style=for-the-badge&logo=Elastic&logoColor=white" />
 </div>
 
+---
+
 ## Certifications
-[Provide certifications that you have obtained. Use ChatGPT to help create the link - Remove this afterwards]]
+
 <div>
 <img src="https://img.shields.io/badge/-Security%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
 <img src="https://img.shields.io/badge/-Network%2B-007ACC?&style=for-the-badge&logo=CompTIA&logoColor=white" />
@@ -79,6 +81,44 @@ It includes:
 <img src="https://img.shields.io/badge/-CCD-000080?&style=for-the-badge&logoColor=white" />
 </div>
 
+---
+
 ## Projects
 - Detection Lab: [`projects/2025-07-internal-webapp/writeup.md`](projects/2025-07-internal-webapp/writeup.md)
 - SOC Automation Project
+
+---
+
+## 🧭 Responsible Disclosure & Ethics
+
+No client-identifying data is ever shared without explicit permission.  
+All examples are either simulated or published with consent.  
+
+If you discover something here that should not be public, please contact me  
+for immediate removal.  
+
+> ⚠️ This repository is for **educational and portfolio demonstration** purposes only.
+
+---
+
+## 🤝 Contributing / Forks
+
+This repository serves primarily as a **personal portfolio**.  
+
+However:
+
+✅ **Forks for learning** are encouraged  
+💬 **Pull requests** for improvements (templates, lab setups) are welcome  
+🚫 **Unauthorized disclosure or use of real vulnerabilities** is strictly prohibited  
+
+---
+
+## 📜 License & Contact
+
+**License:** MIT  
+
+**Contact:**  
+- 🧑‍💻 GitHub: [@DwainEst](https://github.com/DwainEst)  
+- 🔗 LinkedIn: [Dwain Esterhuizen](https://www.linkedin.com/in/dwain-est)
+
+---
