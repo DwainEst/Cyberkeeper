@@ -10,8 +10,7 @@
 
 ## 📑 Table of Contents
 1. [About This Repo](#about-this-repo)
-2. [How I Work — Rules of Engagement & Methodology](#how-i-work--rules-of-engagement--methodology)
-3. [Projects / Write-ups](#projects--write-ups)
+2. [Projects / Write-ups](#projects--write-ups)
 4. [Tools & Skills](#tools--skills)
 5. [How to Run Lab Artifacts Locally](#how-to-run-lab-artifacts-locally)
 6. [Report & Artifact Structure](#report--artifact-structure)
@@ -34,85 +33,52 @@ It includes:
 
 ---
 
-## ⚙️ How I Work — Rules of Engagement & Methodology
+## Skills
+[Provide skills and associated project. Make sure to hyperlink the project - Remove this afterwards]]
 
-Although every client and the subsequent engagment is unique. I follow a general but clear, repeatable process throughout every client engagement:
-
-1. **Pre-engagement & Scoping**  
-   - Quotation, Service agreement and Confirmation of engagement.
-   - Confirm rules of engagement (ROE), targets, scope, exclusions, and legal authorisation.
-2. **Testing**
-  2.1. **Reconnaissance**  
-       - Passive and active information gathering (OSINT, Asset discovery).
-  2.2. **Discovery: Vulnerability Identification**  
-       - Scanning, fuzzing, and manual exploration.
-  2.3. **Exploitation / PoC**  
-       - Controlled exploitation, safe PoC creation, no persistence unless authorized.
-  2.4. **Post-exploitation & Impact Analysis**  
-       - Data exposure analysis, lateral movement (if in scope).
-  2.5. **Report Writing**
-       - Capturing steps taken along with actionable remediation guidance.
-3. **Reporting**  
-   - Presenting the actionable remediation guidance with prioritised findings.
-4. **Retest (if required/agreed)**
-
-All work adheres to ethical hacking principles and responsible disclosure standards.
+| Skill                                         | Associated Project         |
+|-----------------------------------------------|----------------------------|
+| SIEM Implementation and Log Analysis          | <a href="https://google.com">Detection Lab</a>|
+| Network Traffic Monitoring and Attack Detection | <a href="https://google.com">Detection Lab</a>|
+| Security Automation with Shuffle SOAR         | SOC Automation Lab|
+| Incident Response Planning and Execution      | SOC Automation Lab|
+| Case Management with TheHive                  | SOC Automation Lab|
+| Scripting and Automation for Threat Mitigation | SOC Automation Lab|
 
 ---
+## Tools
+[Provide tools and break them down into categories. Use ChatGPT to help create the link - Remove this afterwards]]
 
-## 💼 Projects / Write-ups
+### Network
+<div>
+    <img src="https://img.shields.io/badge/-Wireshark-1679A7?&style=for-the-badge&logo=Wireshark&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Suricata-EF3B2D?&style=for-the-badge&logo=Suricata&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Zeek-777BB4?&style=for-the-badge&logo=Zeek&logoColor=white" />
+</div>
 
-Each project folder contains a structured write-up, PoCs, and sanitized evidence.
+### Endpoint
+<div>
+    <img src="https://img.shields.io/badge/-Microsoft_Defender_for_Endpoint-00A4EF?&style=for-the-badge&logo=Microsoft&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Velociraptor-4B275F?&style=for-the-badge&logo=Velociraptor&logoColor=white" />
+</div>
 
-### Example: `projects/2025-07-internal-webapp/`
+### SIEM
+<div>
+    <img src="https://img.shields.io/badge/-Microsoft_Sentinel-0078D4?&style=for-the-badge&logo=Microsoft&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Splunk-000000?&style=for-the-badge&logo=Splunk&logoColor=white" />
+    <img src="https://img.shields.io/badge/-Elastic-005571?&style=for-the-badge&logo=Elastic&logoColor=white" />
+</div>
 
-**Title:** Internal Web App — Auth Bypass → RCE (sanitized)  
-**Scope:** Internal IP range — assets A, B (redacted)  
-**Summary:** Authentication bypass through predictable session tokens → remote code execution via insecure deserialization.  
-**Highlights:**
-- CVSS: 9.1 (High)
-- Safe PoC for access-level verification (sanitized)
+## Certifications
+[Provide certifications that you have obtained. Use ChatGPT to help create the link - Remove this afterwards]]
+<div>
+<img src="https://img.shields.io/badge/-Security%2B-FF0000?&style=for-the-badge&logo=CompTIA&logoColor=white" />
+<img src="https://img.shields.io/badge/-Network%2B-007ACC?&style=for-the-badge&logo=CompTIA&logoColor=white" />
+<img src="https://img.shields.io/badge/-A%2B-4D4D4D?&style=for-the-badge&logo=CompTIA&logoColor=white" />
+<img src="https://img.shields.io/badge/-CDSA-006400?&style=for-the-badge&logoColor=white" />
+<img src="https://img.shields.io/badge/-CCD-000080?&style=for-the-badge&logoColor=white" />
+</div>
 
-**Files:**
-- `writeup.md` — full, redacted report  
-- `pocs/` — sanitized proof-of-concept scripts  
-- `screenshots/` — redacted evidence  
-
-**Path:** [`projects/2025-07-internal-webapp/writeup.md`](projects/2025-07-internal-webapp/writeup.md)
-
----
-
-## 🧾 Project / Write-up Template
-
-Use this template for each new engagement.
-
-```markdown
-# Project Title — YYYY-MM
-
-## Overview
-- Client (redacted): Example Corp
-- Scope: [list of targets]
-- Date: YYYY-MM-DD
-
-## Summary & Impact
-- Executive summary for non-technical stakeholders.
-- Impact rating (High / Medium / Low).
-
-## Findings (ordered by risk)
-### Finding 1 — Title
-- CVSS (if applicable)
-- Description
-- Reproduction steps (non-destructive)
-- Evidence (redacted)
-- Remediation
-
-### Finding 2 — Title
-...
-
-## PoC & Artifacts
-- `poc.sh` (sanitized)
-- `screenshots/`
-
-## Lessons Learned & Follow-up Actions
-
-
+## Projects
+- Detection Lab: [`projects/2025-07-internal-webapp/writeup.md`](projects/2025-07-internal-webapp/writeup.md)
+- SOC Automation Project
