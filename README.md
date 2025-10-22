@@ -38,7 +38,8 @@ It includes:
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
-| SIEM Implementation and Log Analysis          | <a href="https://google.com">Detection Lab</a>|
+| Example Project          | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
+| SIEM Implementation and Log Analysis          | <a href="https://github.com/DwainEst/Project_Example.git">Detection Lab</a>|
 | Network Traffic Monitoring and Attack Detection | <a href="https://google.com">Detection Lab</a>|
 | Security Automation with Shuffle SOAR         | SOC Automation Lab|
 | Incident Response Planning and Execution      | SOC Automation Lab|
@@ -85,7 +86,7 @@ It includes:
 ---
 
 ## Projects
-- Detection Lab: [`projects/2025-07-internal-webapp/writeup.md`](projects/2025-07-internal-webapp/writeup.md)
+- <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>
 - SOC Automation Project
 
 ---
