@@ -1,4 +1,4 @@
-# 🛡️ Cyberkeeper — Computer Science and Penetration Testing Resource
+# 🛡️ A Penetration Testers Resource
 
 > A public portfolio of work in penetration testing & Computer Science. Includes write-ups, tooling notes and other useful Computer Science related information by **Dwain Esterhuizen**.  
 
