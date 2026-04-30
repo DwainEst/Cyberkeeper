@@ -38,8 +38,9 @@ It includes:
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
-| OSINT          | <a href="https://github.com/DwainEst/Cyberkeeper/blob/main/OSINT-Resources.md">OSINT-resource</a>|
-| RECON          | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
+| OSINT                                         | <a href="https://github.com/DwainEst/Cyberkeeper/blob/main/OSINT-Resources.md">OSINT-resource</a>|
+| RECON                                         | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
+| Web Access                                    | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
 | SIEM Implementation and Log Analysis          | <a href="https://github.com/DwainEst/Project_Example.git">Detection Lab</a>|
 | Network Traffic Monitoring and Attack Detection | <a href="https://google.com">Detection Lab</a>|
 | Security Automation with Shuffle SOAR         | SOC Automation Lab|
