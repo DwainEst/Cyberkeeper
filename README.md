@@ -1,7 +1,7 @@
 
 # 🛡️ A Penetration Testers Resource
 
-> A public portfolio of work in penetration testing & Computer Science. Includes write-ups, tooling notes and other useful Computer Science related information by **Dwain Esterhuizen**.  
+> A public repo of penetration testing methodoloogies, write-ups, tooling notes and other useful Computer Science related information encourentered on my journey by **Dwain Esterhuizen**.  
 
 <a href="https://www.linkedin.com/in/dwain-est" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> 
 
@@ -39,8 +39,8 @@ It includes:
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
 | OSINT                                         | <a href="https://github.com/DwainEst/Cyberkeeper/blob/main/OSINT-Resources.md">OSINT-resource</a>|
-| RECON                                         | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
-| Web Access                                    | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
+| Web                                           | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
+| Network RECON                                 | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
 | Linux                                         | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
 | Windows                                       | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
 | Active Directory                              | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
