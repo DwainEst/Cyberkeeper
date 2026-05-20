@@ -38,12 +38,12 @@ It includes:
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
-| OSINT                                         | <a href="https://github.com/DwainEst/Cyberkeeper/blob/main/OSINT-Resources.md">OSINT-resource</a>|
-| Web                                           | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
-| Network RECON                                 | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
-| Linux                                         | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
-| Windows                                       | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
-| Active Directory                              | <a href="https://github.com/DwainEst/Project_Example.git">Example Lab</a>|
+| OSINT                                         | <a href="https://github.com/DwainEst/Cyberkeeper/blob/main/OSINT-Resources.md">OSINT Repository</a>|
+| Web Testing                                   | <a href="https://github.com/DwainEst/Project_Example.git">Web Testing Repository</a>|
+| Network Testing                               | <a href="https://github.com/DwainEst/Project_Example.git">Linux Testing Repository</a>|
+| Linux Testing                                 | <a href="https://github.com/DwainEst/Project_Example.git">Network Testing Repository</a>|
+| Windows Testing                               | <a href="https://github.com/DwainEst/Project_Example.git">Windows Testing Repositor</a>|
+| Active Directory Testing                      | <a href="https://github.com/DwainEst/Project_Example.git">Active Directory Repository</a>|
 | SIEM Implementation and Log Analysis          | <a href="https://github.com/DwainEst/Project_Example.git">Detection Lab</a>|
 | Network Traffic Monitoring and Attack Detection | <a href="https://google.com">Detection Lab</a>|
 | Security Automation with Shuffle SOAR         | SOC Automation Lab|
