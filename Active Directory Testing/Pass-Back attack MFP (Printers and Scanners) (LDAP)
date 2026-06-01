@@ -1,0 +1,23 @@
+**Multi-Function Peripherals (MFPs)** have advanced abilities like the ability to integrate with the corporate network to allow for convenient scan/email. 
+
+This functionality necessitates:
+
+- Lightweight Directory Access Protocols (LDAP) integration
+- Simple Mail Transfer Protocol (SMTP) integration
+- Network Shares
+
+The best part is that MFP security and maintenance is often forgotten, potentially resulting in a quick win for someone looking to gain entry or escalate their privileges in a compromised network.
+
+https://medium.com/@nickvangilder/exploiting-multifunction-printers-during-a-penetration-test-engagement-28d3840d8856
+
+See this article for **how to** use this to your advantage:
+
+https://www.mindpointgroup.com/blog/how-to-hack-through-a-pass-back-attack/
+
+**Enable LDAP over SSL** with a third-party certification authority:
+
+https://learn.microsoft.com/en-US/troubleshoot/windows-server/identity/enable-ldap-over-ssl-3rd-certification-authority
+
+https://cheatsheetseries.owasp.org/cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.html#SnippetTab
+
+See aslo "PrintNightmare, concerns the Print Spooler component in all Windows devices. It’s being tracked as CVE-2021-34527, and lets attackers install programmes, view, change or delete data, or create new accounts with full privileges on targeted devices."
