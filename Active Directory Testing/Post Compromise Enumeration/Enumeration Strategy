@@ -1,0 +1,33 @@
+1. After we have access to an account, we look for quick wins:
+    - Kerberoasting
+    - Secretsdump
+    - Pass the hash / Pass the password
+
+2. In the case of no quick win:
+
+- Enumerate (Bloodhound, who are users and admins, do we have access to any machines that are potentially sensitive?)
+- What does our account give us access to? (File shares, can we log into a different location, check emails or service desk tickets)
+- Check old vulnerabilities e.g. eternal blue.
+
+
+
+In Windows two methods of authentication are used:
+
+1. NTLMv1 or NTLMv2
+    
+    NTLM is vulnerable to the following:
+    
+    - **Pass-the-Hash Attacks**
+    - **Credential Reuse:** If an attacker obtains the NTLMv2 hash of a user's password, they can potentially reuse it to authenticate to other services or systems where that same password is used.
+    - **Weak Passwords:** NTLMv2, like NTLMv1, is vulnerable to attacks against weak passwords. If users choose weak or easily guessable passwords, they can still be susceptible to brute-force attacks or dictionary attacks.
+    - **Lack of Mutual Authentication:** NTLMv2 does not inherently provide mutual authentication between the client and the server. While it includes a server challenge to mitigate certain attacks, it does not require the server to authenticate itself to the client, leaving potential vulnerabilities such as man-in-the-middle attacks.
+    
+2. Kerberos. This being the newer means of authentication.
+    
+    **The Kerberos authentication process** is vulnerable at various stages of the authentication process.
+    
+    **In step 2** a vulnerability exists if a user does not have pre-auth enabled then we could brute force or hashcat the session key and try deriving the user password.
+
+    **Step 3** is vulnerable to a **Krbtgt** GOLDEN TICKET ATTACK  . This is if we have access to the krbtgt account password then we could decrypt the TT and pretend to be anyone we want and so doing authenticate with the DC.
+
+    **Step 3+4** is vulnerable to a **Krbtgt** SILVER TICKET ATTACK **.** This is when we have the password to a target service. We are able to create a fake ticket and fake session key and encrypt the authenticator with the fake session key and place the session key inside the ticket and send this to the server.    
