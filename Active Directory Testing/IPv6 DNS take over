@@ -1,0 +1,107 @@
+About:
+This attack allows our machine to assume the role of the DNS server and in so doing we relay the traffic to the domain controller. 
+
+When a system on the network attempts to authenticate — such as during a logon or WPAD request — we can intercept and relay that NTLM authentication to the Domain Controller over LDAPS.  In the below example the WPAD request *triggers* Windows to automatically send NTLM credentials, which we can capture to an LDAPS service and relay.
+
+By default, many Windows systems have this **"Automatically detect settings"** box checked. This makes them actively look for `wpad.domain.local`, which, in an attacker-controlled network, can be **spoofed using mitm6**, leading to credential leakage. 
+
+Windows machines try to auto-configure proxy settings to support legacy corporate setups where proxies are centrally managed — and this behaviour can be abused in MITM6 attacks because: 
+
+- The setting is often on by default
+- No user action is needed
+- NTLM credentials get sent automatically
+
+**The Attack:**
+
+<aside>
+
+Do not run this for longer than 5 minutes at a time as it causes a lot of traffic and can crash a network. 
+
+</aside>
+
+1. On your attacking machine, type out this cmd in a terminal, but don’t enter it yet:
+    
+    `sudo mitm6 -d marvel.local`
+    
+    - About this command:
+        
+        ```bash
+        sudo mitm6 -d marvel.local
+        ```
+        
+        This command **launches a rogue IPv6 DHCPv6 server** that:
+        
+        - Advertises itself as the **IPv6 gateway**
+        - Tells Windows clients that it’s the **DNS server**
+        - Injects a fake WPAD hostname (e.g., `wpad.marvel.local`) into their config
+        - Redirects IPv6 traffic to your attacker box
+        - Spoofs DNS and WPAD via IPv6
+        - Triggers auto-authentication from Windows clients
+        - Primes the network for `ntlmrelayx` to intercept and relay those creds
+        - d = domain
+        
+        | Flag | Meaning |
+        | --- | --- |
+        | `sudo` | Required because it needs low-level network access (bind to ports, send DHCPv6 packets, etc.) |
+        | `mitm6` | The tool — it poisons the network using rogue DHCPv6 |
+        | `-d marvel.local` | The domain name to spoof (should match the target AD domain). It tells victims they’re part of this domain and feeds them fake DNS/WPAD entries like `wpad.marvel.local`. |
+        
+        ### What does this trigger on the victim machine?
+        
+        Once `mitm6` poisons a machine:
+        
+        1. The Windows system sees your box as its **IPv6 DNS server**.
+        2. It resolves `wpad.marvel.local` to your attacker machine.
+        3. The victim **sends a request to `http://wpad.marvel.local/wpad.dat`**, expecting proxy config.
+        4. You (via `ntlmrelayx`) reply with `401 Unauthorized`, and...
+        5. The victim **automatically sends NTLM credentials** to authenticate.
+        6. `ntlmrelayx` **relays those to your target** (e.g., `ldaps://192.168.138.136`).
+
+2. On your attacking machine, run this cmd using the DC_IP in a separate terminal → This allows us to become the ‘Man-in-the-Middle’ DNS server:
+    
+    `ntlmrelayx.py -6 -t ldaps://192.168.138.136 -wh fakewpad.marvel.local -l **lootme**`
+    
+    !Check the new **lootme** file for dumped data from ldapdomaindump! 
+    
+    Ensure there are no errors!
+    
+    - What is going on here:
+        
+        You're setting up `ntlmrelayx.py` to **relay incoming NTLM authentication requests captured over IPv6** to an LDAPS (LDAP over SSL) service running on `192.168.138.136`, and you're storing the loot (extracted data or hashes) in a folder named `lootme`. You're also pretending to be a WPAD (Web Proxy Auto-Discovery) server to make the attack more convincing.
+        
+3. Now run the `sudo mitm6 -d marvel.local` cmd from step 1. 
+    
+    If an event occurs e.g. a log-in or reboot of a machine, we get something like this running over our screen which includes successful user authentications and revealed usernames and passwords. 
+    
+    !Here we see an authentication of the user without us logging in. 
+    
+    Here we see an authentication of the user without us logging in. 
+    
+    If an Administrator signs in a new user is created:
+    
+    ![Here we see a new user created. sername: `BhveaolIgq` password: `^x9)-lL]VxkM^3u` ](attachment:c98dcba1-bffe-4822-a886-c12c5c9bc3ed:image.png)
+    
+    Here we see a new user created. sername: `BhveaolIgq` password: `^x9)-lL]VxkM^3u` 
+    
+    We can use `DCSync` with `secretsdump.py` and this new (BhveaolIgp) user.
+    
+    If you had access to the Domain Controller (Tools > Active Directory Users & Groups > Marvel.local > users > member of) you would be able to see that this new user was created. This user is only a Domain user and not a Domain admin. But you will see that they have access to the Enterprise Admins group. If we run `secretsdump.py` against the Domian controller and dump out the secrets. 
+    
+    Dumping Credentials | Windows account secrets  
+    
+    Utilise the found hashes to completely own the domain. (Possibly using hashcat or John the Ripper)
+    
+    ---
+    
+4. Find the ‘`lootme`’ folder on your kali machine which has a load of data created by a tool called ldapdomaindump
+    
+    
+
+Look at files:
+
+- domain_computers
+    - Consider what vulns exist for each OS
+- domain_users_by_groups:
+    - What users are in group
+    - Who are admins, domain admins, enterprise admins, description, services
+    - High value targets?
