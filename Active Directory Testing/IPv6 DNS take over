@@ -13,11 +13,10 @@ Windows machines try to auto-configure proxy settings to support legacy corporat
 
 **The Attack:**
 
-<aside>
 
-Do not run this for longer than 5 minutes at a time as it causes a lot of traffic and can crash a network. 
+Do not run this for longer than 5 minutes at a time as it causes a lot of traffic and can crash a network!
 
-</aside>
+
 
 1. On your attacking machine, type out this cmd in a terminal, but don’t enter it yet:
     
