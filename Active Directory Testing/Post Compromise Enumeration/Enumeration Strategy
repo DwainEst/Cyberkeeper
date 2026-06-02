@@ -25,6 +25,7 @@ In Windows two methods of authentication are used:
 2. Kerberos. This being the newer means of authentication.
     
     **The Kerberos authentication process** is vulnerable at various stages of the authentication process.
+    ![Alt text](images/Kerberos Auth Process.png)
     
     **In step 2** a vulnerability exists if a user does not have pre-auth enabled then we could brute force or hashcat the session key and try deriving the user password.
 
