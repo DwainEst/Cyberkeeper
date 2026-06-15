@@ -1,6 +1,26 @@
 # Active Directory Home Lab
 ### *Complete Setup Guide*
-**Domain:** `marvel.local` | **DC:** `HYDRA-DC`
+
+---
+
+## Lab Overview
+
+This lab sets up a Windows Active Directory environment consisting of three virtual machines:
+
+- 1 x Domain Controller (DC) — Windows Server 2022
+- 2 x Workstations — Windows 11 Enterprise
+
+---
+
+## Contents
+
+- [Part 1: Domain Controller Setup](#part-1-domain-controller-setup)
+- [Part 2: Windows 11 Enterprise Workstations](#part-2-windows-11-enterprise-workstations)
+- [Part 3: AD Users, Groups & Policies](#part-3-ad-users-groups--policies)
+- [Part 4: File Share & Service Account SPN](#part-4-file-share--service-account-spn)
+- [Part 5: Joining Workstations to the Domain](#part-5-joining-workstations-to-the-domain)
+- [Part 6: Set Up Local Administrators on Workstations](#part-6-set-up-local-administrators-on-workstations)
+- [Part 7: Map Network Drive on Spiderman Machine](#part-7-map-network-drive-on-spiderman-machine)
 
 ---
 
@@ -17,15 +37,7 @@
 | THEPUNISHER — Frank Castle | `frankcastle` | `Password1` |
 | (Local) Administrator | `Administrator` | `P@$$w0rd1!` |
 
----
-
-## Lab Overview
-
-This lab sets up a Windows Active Directory environment consisting of three virtual machines:
-
-- 1 x Domain Controller (DC) — Windows Server 2022
-- 2 x Workstations — Windows 11 Enterprise
-- **Domain:** `marvel.local`
+**Domain:** `marvel.local` | **DC:** `HYDRA-DC`
 
 ---
 
