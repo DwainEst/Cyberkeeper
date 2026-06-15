@@ -12,7 +12,6 @@ This lab sets up a Windows Active Directory environment consisting of three virt
 
 ---
 ## ISO Download
-
 https://www.microsoft.com/en-gb/evalcenter/
 
 ---
