@@ -10,7 +10,9 @@ This lab sets up a Windows Active Directory environment consisting of three virt
 - 1 x Domain Controller (DC) — Windows Server 2022
 - 2 x Workstations — Windows 11 Enterprise
 
-## ISO Download: 
+---
+
+### ISO Download: 
 https://www.microsoft.com/en-gb/evalcenter/
 
 ---
