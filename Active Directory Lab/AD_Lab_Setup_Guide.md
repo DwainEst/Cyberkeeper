@@ -11,8 +11,7 @@ This lab sets up a Windows Active Directory environment consisting of three virt
 - 2 x Workstations — Windows 11 Enterprise
 
 ---
-## ISO Download
-https://www.microsoft.com/en-gb/evalcenter/
+## ISO Download: https://www.microsoft.com/en-gb/evalcenter/
 
 ---
 
