@@ -12,7 +12,7 @@ https://www.microsoft.com/en-gb/evalcenter/
 
 ---
 
-## Contents
+### Contents
 
 - [Part 1: Domain Controller Setup](#part-1-domain-controller-setup)
 - [Part 2: Windows 11 Enterprise Workstations](#part-2-windows-11-enterprise-workstations)
@@ -24,7 +24,7 @@ https://www.microsoft.com/en-gb/evalcenter/
 
 ---
 
-## Credentials Reference
+### Credentials Reference
 
 | Machine / Account | Username | Password |
 |---|---|---|
@@ -43,13 +43,11 @@ https://www.microsoft.com/en-gb/evalcenter/
 
 ## Part 1: Domain Controller Setup
 
-**Machine:** `HYDRA-DC` | **OS:** Windows Server 2022 Desktop Experience
-
 ### Step 1 — Initial Installation
 
 - **Download:** Windows Server 2022 ISO
 - **Edition:** Windows Server 2022 Desktop Experience
-- **Administrator Password:** `l@$$w0rd!` *(weak password that meets minimum requirements)*
+- **Administrator Password:** `P@$$w0rd!` *(weak password that meets minimum requirements)*
 
 ### Step 2 — Basic Configuration
 
@@ -89,13 +87,13 @@ https://www.microsoft.com/en-gb/evalcenter/
 
 ## Part 2: Windows 11 Enterprise Workstations
 
-Install 2 x Windows 11 Enterprise (60GB each) with the following settings:
+Install 2 x Windows 11 Enterprise (60GB each) with the following credentials:
 
 | | THEPUNISHER | SPIDERMAN |
 |---|---|---|
 | **Local User** | `frankcastle` | `peterparker` |
 | **Password** | `Password1` | `Password1` |
-| **Security Q** | Bob | bob |
+| **Security Q** | Bob | Bob |
 | **Telemetry** | Skip | Skip |
 | **Rename PC** | `THEPUNISHER` | `SPIDERMAN` |
 
